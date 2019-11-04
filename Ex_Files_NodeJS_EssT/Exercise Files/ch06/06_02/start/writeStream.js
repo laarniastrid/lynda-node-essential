@@ -5,16 +5,15 @@ const readStream = fs.createReadStream('./assets/lorum-ipsum.md', 'UTF-8');
 
 // process.stdout.write('hello');
 // process.stdout.write(' world\n');
-
 // writeStream.write('hello');
 // writeStream.write(' world\n');
 
 // process.stdin.on('data', data => {
 //   writeStream.write(data);
 // })
+// readStream.on('data', data => {
+//   writeStream.write(data);
+// })
 
-readStream.on('data', data => {
-  writeStream.write(data);
-})
-
-// readStream.pipe(writeStream);
+// process.stdin.pipe(writeStream);
+readStream.pipe(writeStream);
